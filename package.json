@@ -1,22 +1,19 @@
 {
-  "name": "electron-quick-start",
+  "name": "pit game 2020",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "Game that will be used in the pits",
   "main": "main.js",
   "scripts": {
+    "dev": "node_modules/.bin/http-server . -p 5000 -a 0.0.0.0",
     "start": "electron ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
-  "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
-  ],
+  "repository": "https://github.com/frc2852/pit-game-2020",
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^8.0.3"
+  },
+  "dependencies": {
+    "http-server": "^0.12.1"
   }
 }
