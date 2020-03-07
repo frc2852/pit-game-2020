@@ -35,13 +35,15 @@ $(document).ready(function() {
 
       if (videoSrc !== videoList.introVideo) {
         if (!findQuestionVideo(videoSrc)) {
+          currentQuestion = undefined;
+          currentVideo = 0;
           $videoSource.attr("src", videoList.gameoverVideo);
         } else {
           const question = findQuestionVideo(videoSrc);
           $videoSource.attr("src", question.waitingVideo);
         }
       }
-
+      
       if (videoSrc === videoList.gameoverVideo) {
         $videoSource.attr("src", videoList.introVideo);
       }
@@ -83,23 +85,26 @@ $(document).ready(function() {
     return videoList.gameoverVideo;
   }
 
-  $("#click1").click(function() {
-    const videoQuestion = nextQuestion(true);
-
+  function playNextVideo(videoQuestion) {
     const $videoSource = $("#video-player").find("source");
     $videoSource.attr("src", videoQuestion);
     const autoplayVideo = $("#video-player").get(0);
     autoplayVideo.load();
     autoplayVideo.play();
-  });
+  }
 
-  $("#click2").click(function() {
-    const videoQuestion = nextQuestion(false);
+  $(document).on('keypress', function(event) {
 
-    const $videoSource = $("#video-player").find("source");
-    $videoSource.attr("src", videoQuestion);
-    const autoplayVideo = $("#video-player").get(0);
-    autoplayVideo.load();
-    autoplayVideo.play();
-  });
+    // upper or lower "A" character 
+    if (event.which === 97 || event.which === 65) {
+      const videoQuestion = nextQuestion(true);
+      playNextVideo(videoQuestion);
+    }
+    
+    // upper or lower "D" character 
+    if (event.which === 100 || event.which === 68) {
+      const videoQuestion = nextQuestion(false);
+      playNextVideo(videoQuestion);
+    }
+  })
 });
