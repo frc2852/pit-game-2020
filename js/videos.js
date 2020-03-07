@@ -1,20 +1,60 @@
 $(document).ready(function() {
   const videoList = {
-    introVideo: "videos/im-at-soup.mp4",
+    introVideo: "videos/intro.mp4",
     questions: [
       {
-        video: "videos/why-are-you-running.mp4",
+        video: "videos/wait-video-1.mp4",
         answer: true,
-        waitingVideo: "videos/test-video-1.mp4"
+        waitingVideo: "videos/question-1.mp4"
       },
       {
-        video: "videos/youre-going-to-be-a-father.mp4",
+        video: "videos/wait-video-2.mp4",
+        answer: true,
+        waitingVideo: "videos/question-2.mp4"
+      },
+      {
+        video: "videos/wait-video-3.mp4",
         answer: false,
-        waitingVideo: "videos/test-video-1.mp4"
-      }
+        waitingVideo: "videos/question-3.mp4"
+      },
+      {
+        video: "videos/wait-video-4.mp4",
+        answer: false,
+        waitingVideo: "videos/question-4.mp4"
+      },
+      {
+        video: "videos/wait-video-5.mp4",
+        answer: false,
+        waitingVideo: "videos/question-5.mp4"
+      },
+      {
+        video: "videos/wait-video-6.mp4",
+        answer: false,
+        waitingVideo: "videos/question-6.mp4"
+      },
+      {
+        video: "videos/wait-video-7.mp4",
+        answer: true,
+        waitingVideo: "videos/question-7.mp4"
+      },
+      {
+        video: "videos/wait-video-8.mp4",
+        answer: false,
+        waitingVideo: "videos/question-8.mp4"
+      },
+      {
+        video: "videos/wait-video-9.mp4",
+        answer: false,
+        waitingVideo: "videos/question-9.mp4"
+      },
+      {
+        video: "videos/wait-video-10.mp4",
+        answer: true,
+        waitingVideo: "videos/question-10.mp4"
+      },
     ],
-    congratulationsVideo: "videos/congratulations.mp4",
-    gameoverVideo: "videos/leamons.mp4"
+    congratulationsVideo: "videos/win-video.mp4",
+    gameoverVideo: "videos/game-over.mp4"
   };
 
   function findQuestionVideo(videoSrc) {
